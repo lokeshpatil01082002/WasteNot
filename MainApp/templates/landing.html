@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WasteNot - Sell Your E-Waste</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Montserrat', sans-serif;
+			background-color: #E7FFE7;
+		
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100vh;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		header {
+			display: flex;
+			align-items: center;
+			margin: 2rem 0 0 2rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+
+		header img {
+			width: 5rem;
+			height: 5rem;
+			margin-right: 1rem;
+		}
+
+		h1 {
+			font-size: 4rem;
+			margin: 0;
+			color: #0D8A0D;
+			text-shadow: 2px 2px #8DC98D;
+		}
+
+		h2 {
+			font-size: 2rem;
+			margin: 0;
+			color: #0D8A0D;
+			text-shadow: 2px 2px #8DC98D;
+			margin-top: 40%;
+		}
+		.ceo h2 {
+			font-size: 2rem;
+			margin: 0;
+			color: #0D8A0D;
+			text-shadow: 2px 2px #8DC98D;
+			margin-top: 2%;
+		}
+
+		.btn-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin-top: 3%;
+		}
+
+		.btn-container button {
+			background-color: #0D8A0D;
+			color: white;
+			padding: 1rem 2rem;
+			border-radius: 0.5rem;
+			border: none;
+			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+			margin: 1rem;
+			font-size: 1.2rem;
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+		}
+
+		.btn-container button:hover {
+			background-color: blue;
+		}
+
+		.about {
+			background-color: #fff;
+			padding: 2rem;
+			margin-top: 2rem;
+			border-radius: 1rem;
+			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+			max-width: 80%;
+			text-align: justify;
+			text-justify: inter-word;
+		}
+
+		.ceo {
+			background-color: #fff;
+			padding: 2rem;
+			margin-top: 3%;
+			border-radius: 1rem;
+			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+			max-width: 90%;
+			text-align: justify;
+			text-justify: inter-word;
+		}
+
+		.about h3 {
+			color: #0D8A0D;
+			margin-top: 0;
+		}
+
+
+
+
+
+		.footer{
+			width:auto;
+			height:auto;
+			
+		}
+
+
+		.ceo {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 3rem;
+		  }
+		  
+		  .founders {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		  }
+		  
+		  .founder {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 1rem;
+			position: relative;
+		  }
+		  
+		  .founder-img {
+			width: 10rem;
+			height: 10rem;
+			border-radius: 50%;
+			object-fit: cover;
+			transition: transform 0.2s ease-in-out;
+		  }
+		  
+		  .founder:hover .founder-info {
+			opacity: 1;
+		  }
+		  
+		  .founder-info {
+			position: absolute;
+			bottom: -5rem;
+			opacity: 0;
+			transition: opacity 0.2s ease-in-out;
+			background-color: white;
+			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+			padding: 1rem;
+			border-radius: 1rem;
+			text-align: center;
+		  }
+		  
+		  .founder-info h3 {
+			margin: 0;
+		  }
+		  
+		  .founder-info p {
+			margin: 0.5rem 0;
+		  }
+		  
+
+
+
+		
+	
+		  
+	</style>
+</head>
+<body>
+	<header>
+		<img src="/static/images/newlogo.png" alt="WasteNot Logo">
+		<h1>WasteNot</h1>
+	</header>
+
+	<h2>Sell Your E-Waste Today</h2><hr>
+	<div class="btn-container">
+		
+	
+		<button onclick="location.href='signup'">Get Started  &nbsp;  &nbsp;   <span class="arrow">&#10148;</span></button>
+	</div>
+	<p>Join our community of e-waste sellers and help create a more sustainable future</p>
+	<div class="about">
+		<h3>About Us</h3>
+		<p>WasteNot is a company that specializes in collecting and recycling e-waste. We work hard to ensure that e-waste is properly disposed of and recycled, and we also resell some of the e-waste we collect to manufacturing companies to be repurposed. Join us in our mission to make the world a cleaner and greener place!</p>
+	</div>
+	<div class="ceo">
+		<h2>Our Founders ...</h2>
+		<div class="founders">
+		  <div class="founder">
+			<img src="/static/images/img1.jpeg" alt="Founder 1" class="founder-img"><h3>Lokesh Patil</h3>
+			<div class="founder-info">
+			  <h3>Lokesh Patil</h3>
+			  <p><a href="#">LinkedIn</a></p>
+			  <p>Email: lokesh.patil@wastenot.com</p>
+			</div>
+		  </div>
+		  <div class="founder">
+			<img src="/static/images/img1.jpeg" alt="Founder 2" class="founder-img"><h3>Shreeshail Mahajan</h3>
+			<div class="founder-info">
+			  <h3>Shreeshail Mahajan</h3>
+			  <p><a href="#">LinkedIn</a></p>
+			  <p>Email: shree.mahajan@wastenot.com</p>
+			</div>
+		  </div>
+		  <div class="founder">
+			<img src="/static/images/img1.jpeg" alt="Founder 3" class="founder-img"><h3>Vedhas Madgulkar</h3>
+			<div class="founder-info">
+			  <h3>Vedhas Madgulkar</h3>
+			  <p><a href="#">LinkedIn</a></p>
+			  <p>Email: vedhas.madgulkar@wastenot.com</p>
+			</div>
+		  </div>
+		  <div class="founder">
+			<img src="/static/images/img1.jpeg" alt="Founder 4" class="founder-img"><h3>Bhanu Priya SIngh Naik</h3>
+			<div class="founder-info">
+			  <h3>Bhanu Priya Singh Naik</h3>
+			  <p><a href="#">LinkedIn</a></p>
+			  <p>Email: bhanu.naik@wastenot.com</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+	
+	  
+</body>
+</html>
