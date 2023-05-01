@@ -1,0 +1,162 @@
+[
+  {
+    "company": "Boat",
+    "Models": [
+      {
+        "BoatModel1": 500
+      },
+      {
+        "BoatModel2": 1000
+      },
+      {
+        "BoatModel3": 750
+      },
+      {
+        "BoatModel4": 1500
+      },
+      {
+        "BoatModel5": 2000
+      },
+      {
+        "BoatModel6": 3000
+      },
+      {
+        "BoatModel7": 2500
+      },
+      {
+        "BoatModel8": 1800
+      },
+      {
+        "BoatModel9": 1200
+      },
+      {
+        "BoatModel10": 900
+      }
+    ]
+  },
+  {
+    "company": "JBL",
+    "Models": [
+      {
+        "JBLModel1": 800
+      },
+      {
+        "JBLModel2": 1200
+      },
+      {
+        "JBLModel3": 900
+      },
+      {
+        "JBLModel4": 1500
+      },
+      {
+        "JBLModel5": 2000
+      },
+      {
+        "JBLModel6": 3000
+      },
+      {
+        "JBLModel7": 2500
+      },
+      {
+        "JBLModel8": 1800
+      },
+      {
+        "JBLModel9": 1200
+      },
+      {
+        "JBLModel10": 900
+      }
+    ]
+  },
+  {
+    "company": "Sony",
+    "Models": [
+      {
+        "SonyModel1": 1000
+      },
+      {
+        "SonyModel2": 1500
+      },
+      {
+        "SonyModel3": 1200
+      },
+      {
+        "SonyModel4": 1800
+      },
+      {
+        "SonyModel5": 2200
+      },
+      {
+        "SonyModel6": 3500
+      },
+      {
+        "SonyModel7": 2800
+      },
+      {
+        "SonyModel8": 2000
+      },
+      {
+        "SonyModel9": 1400
+      },
+      {
+        "SonyModel10": 1100
+      }
+    ]
+  },
+  {
+    "company": "Realme",
+    "Models": [
+      {
+        "RealmeModel1": 700
+      },
+      {
+        "RealmeModel2": 1000
+      },
+      {
+        "RealmeModel3": 800
+      },
+      {
+        "RealmeModel4": 1200
+      },
+      {
+        "RealmeModel5": 1600
+      },
+      {
+        "RealmeModel6": 2500
+      },
+      {
+        "RealmeModel7": 2000
+      },
+      {
+        "RealmeModel8": 1500
+      },
+      {
+        "RealmeModel9": 1000
+      },
+      {
+        "RealmeModel10": 750
+      }
+    ]
+  },
+  {
+    "company": "Boult",
+    "Models": [
+      {
+        "BoultModel1": 600
+      },
+      {
+        "BoultModel2": 900
+      },
+      {
+        "BoultModel3": 700
+      },
+      {
+        "BoultModel4": 1000
+      },
+      {
+        "BoultModel5": 1300
+      }
+    ]
+  }
+]

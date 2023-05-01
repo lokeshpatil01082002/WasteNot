@@ -1,0 +1,123 @@
+[
+    {
+      "company": "HP",
+      "Models": [
+        {
+          "HP Model 1": 800
+        },
+        {
+          "HP Model 2": 1200
+        },
+        {
+          "HP Model 3": 1500
+        },
+        {
+          "HP Model 4": 2000
+        },
+        {
+          "HP Model 5": 2500
+        }
+      ]
+    },
+    {
+      "company": "Dell",
+      "Models": [
+        {
+          "Dell Model 1": 900
+        },
+        {
+          "Dell Model 2": 1300
+        },
+        {
+          "Dell Model 3": 1700
+        },
+        {
+          "Dell Model 4": 2200
+        },
+        {
+          "Dell Model 5": 2800
+        }
+      ]
+    },
+    {
+      "company": "Lenovo",
+      "Models": [
+        {
+          "Lenovo Model 1": 1000
+        },
+        {
+          "Lenovo Model 2": 1400
+        },
+        {
+          "Lenovo Model 3": 1800
+        },
+        {
+          "Lenovo Model 4": 2300
+        },
+        {
+          "Lenovo Model 5": 2900
+        }
+      ]
+    },
+    {
+      "company": "Acer",
+      "Models": [
+        {
+          "Acer Model 1": 700
+        },
+        {
+          "Acer Model 2": 1100
+        },
+        {
+          "Acer Model 3": 1500
+        },
+        {
+          "Acer Model 4": 2000
+        },
+        {
+          "Acer Model 5": 2400
+        }
+      ]
+    },
+    {
+      "company": "ASUS",
+      "Models": [
+        {
+          "ASUS Model 1": 1000
+        },
+        {
+          "ASUS Model 2": 1400
+        },
+        {
+          "ASUS Model 3": 1800
+        },
+        {
+          "ASUS Model 4": 2300
+        },
+        {
+          "ASUS Model 5": 2900
+        }
+      ]
+    },
+    {
+      "company": "Apple",
+      "Models": [
+        {
+          "Apple Model 1": 1200
+        },
+        {
+          "Apple Model 2": 1800
+        },
+        {
+          "Apple Model 3": 2200
+        },
+        {
+          "Apple Model 4": 2800
+        },
+        {
+          "Apple Model 5": 3500
+        }
+      ]
+    }
+  ]
+  

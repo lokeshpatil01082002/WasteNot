@@ -1,0 +1,45 @@
+[
+    {
+      "company": "Zebronics",
+      "Models": [
+        {
+          "Zebronics Model 1": 300
+        },
+        {
+          "Zebronics Model 2": 500
+        },
+        {
+          "Zebronics Model 3": 400
+        }
+      ]
+    },
+    {
+      "company": "Dell",
+      "Models": [
+        {
+          "Dell Model 1": 250
+        },
+        {
+          "Dell Model 2": 350
+        },
+        {
+          "Dell Model 3": 450
+        }
+      ]
+    },
+    {
+      "company": "HP",
+      "Models": [
+        {
+          "HP Model 1": 200
+        },
+        {
+          "HP Model 2": 300
+        },
+        {
+          "HP Model 3": 400
+        }
+      ]
+    }
+  ]
+  

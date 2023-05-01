@@ -1,0 +1,170 @@
+[
+    {
+      "company": "Realme",
+      "Models": [
+        {
+          "Realme1": 500
+        },
+        {
+          "Realme2": 800
+        },
+        {
+          "Realme3": 700
+        },
+        {
+          "Realme4": 1000
+        },
+        {
+          "Realme5": 1500
+        },
+        {
+          "Realme6": 2000
+        },
+        {
+          "Realme7": 2500
+        },
+        {
+          "Realme8": 1800
+        },
+        {
+          "Realme9": 1200
+        },
+        {
+          "Realme10": 900
+        }
+      ]
+    },
+    {
+      "company": "Xiaomi",
+      "Models": [
+        {
+          "Xiaomi1": 600
+        },
+        {
+          "Xiaomi2": 900
+        },
+        {
+          "Xiaomi3": 800
+        },
+        {
+          "Xiaomi4": 1200
+        },
+        {
+          "Xiaomi5": 1500
+        },
+        {
+          "Xiaomi6": 2500
+        },
+        {
+          "Xiaomi7": 2000
+        },
+        {
+          "Xiaomi8": 1600
+        },
+        {
+          "Xiaomi9": 1100
+        },
+        {
+          "Xiaomi10": 800
+        }
+      ]
+    },
+    {
+      "company": "Oppo",
+      "Models": [
+        {
+          "Oppo1": 800
+        },
+        {
+          "Oppo2": 1100
+        },
+        {
+          "Oppo3": 900
+        },
+        {
+          "Oppo4": 1400
+        },
+        {
+          "Oppo5": 1800
+        },
+        {
+          "Oppo6": 3000
+        },
+        {
+          "Oppo7": 2500
+        },
+        {
+          "Oppo8": 2000
+        },
+        {
+          "Oppo9": 1300
+        },
+        {
+          "Oppo10": 1000
+        }
+      ]
+    },
+    {
+      "company": "Samsung",
+      "Models": [
+        {
+          "Samsung1": 1000
+        },
+        {
+          "Samsung2": 1500
+        },
+        {
+          "Samsung3": 1200
+        },
+        {
+          "Samsung4": 1800
+        },
+        {
+          "Samsung5": 2200
+        },
+        {
+          "Samsung6": 3500
+        },
+        {
+          "Samsung7": 2800
+        },
+        {
+          "Samsung8": 2000
+        },
+        {
+          "Samsung9": 1400
+        },
+        {
+          "Samsung10": 1100
+        }
+      ]
+    },
+    {
+      "company": "Apple",
+      "Models": [
+        {
+          "iPhone 11": 700
+        },
+        {
+          "iPhone 11 Pro": 1000
+        },
+        {
+          "iPhone 11 Pro Max": 1200
+        },
+        {
+          "iPhone 12": 800
+        },
+        {
+          "iPhone 12 Pro": 1100
+        },
+        {
+          "iPhone 12 Pro Max": 1300
+        },
+        {
+          "iPhone SE": 400
+        }
+    ]
+}
+]
+       
+  

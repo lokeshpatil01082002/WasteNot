@@ -13,13 +13,35 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
+from django.conf import settings
 from  MainApp import views
 from django.contrib import admin
 from django.urls import path
+from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.LandingPage,name='landing'),
-    path('login/',views.LoginPage,name='login'),
+    
     path('signup/',views.SignupPage,name='signup'),
+    path('sellerhome/',views.SellerHomePage,name='sellerhome'),
+    path('vendorhome/',views.VendorHomePage,name='vednorhome'),
+    path('orghome/',views.OrgHomePage,name='orghome'),
+    path('sellerorder/',views.SellerOrderPage,name='sellerorder'),
+    path('sellheadphone/',views.SellHeadphonePage,name='sellheadphone'),
+    path('sellphone/',views.SellPhonePage,name='sellphone'),
+    path('selltv/',views.SellTvPage,name='selltv'),
+    path('sellwatch/',views.SellWatchPage,name='sellwatch'),
+    path('sellspeaker/',views.SellSpeakerPage,name='sellspekaer'),
+    path('sellmouse/',views.SellMousePage,name='sellmouse'),
+    path('sellkeyboard/',views.SellKeyboardPage,name='sellkeyboard'),
+    path('selllaptop/',views.SellLaptopPage,name='selllaptop'),
 ]
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)

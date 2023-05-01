@@ -1,0 +1,445 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   
+
+
+
+    <head>
+        <title>Sell Speakers </title>
+        <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+        <!-- <script src="./js/animation.js"></script> -->
+       
+        
+        
+       
+    </head>
+    
+    
+    <header>
+      <img src="/static/images/newlogo.png" alt="WasteNot Logo">
+      <h1>WasteNot</h1>
+    </header>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #E7FFE7;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-size: 40px;
+          text-align: center;
+        }
+        
+        .container{
+            cursor: pointer;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            width: 30px;
+            height: 20px;
+        }
+        header {
+          display: flex;
+          align-items: center;
+          margin: 0.5rem 0 0 2rem;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        
+            h1 {
+          font-size: 3rem;
+          margin: 0;
+          color: #0D8A0D;
+          text-shadow: 2px 2px #8DC98D;
+        }
+        header img {
+          width: 4rem;
+          height: 4rem;
+          margin-right: 1rem;
+        }
+        .bars{
+            width: 30px;
+            height: 4px;
+            background: #000;
+        }
+        
+        .bars::before,
+        .bars::after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background: #000;
+        }
+        
+        .bars::before{
+            margin-top: 9px;
+        }
+        
+        .bars::after{
+            margin-top: 18px;
+        }
+        
+        nav{
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: -200vw;
+        }
+        
+        nav ul {
+            list-style: none;
+        }
+        
+        nav ul li{
+            margin: 50px 0;
+        }
+        
+        nav ul li a{
+            color: #fafafa;
+            font-size: 2em;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        nav ul li a:after{
+            content: '';
+            width: 100%;
+            position: absolute;
+            height: 3px;
+            border-radius: 5px;
+            background: #fff;
+            bottom: -10px;
+            left: 0;
+            transform-origin: left;
+            transition: transform .5s ease;
+            transform: scaleX(0);
+        }
+        
+        
+        nav ul li a:hover:after{
+            transform: scaleX(1);
+        }
+        
+        nav .close {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 6%;
+            right: 5%;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        nav h2{
+            position: absolute;
+            top:5%;
+            left: 5%;
+            opacity: 0;
+            pointer-events: none;
+            color: #fff;
+            font-size: 2em;
+        }
+        
+        nav .close div::before,
+        nav .close div::after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background: #fff;
+            transition: background .5s ease;
+        }
+        nav .close div::before{
+            transform: rotate(-45deg);
+        }
+        
+        nav .close div::after{
+            transform: rotate(45deg);
+        }
+        
+        nav .close:hover div::before,
+        nav .close:hover div::after{
+            background: rgb(209, 3, 3);
+        }
+        
+        @media (max-width: 992px){
+          h1{
+            font-size: 25px;
+          }
+        }
+        form {
+        
+          
+          width:70%;
+          margin-top: 90px;
+         
+          
+          
+          
+        }
+    
+        .input-group {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        }
+    
+        .input-group label {
+          font-size: 18px;
+          margin-bottom: 5px;
+        }
+    
+        .input-group input, .input-group select {
+          padding: 10px;
+          font-size: 16px;
+          border-radius: 5px;
+          border: none;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    
+        .input-group select {
+          width: 100%;
+        }
+    
+        .input-group input[type=file] {
+          padding: 0;
+          margin-top: 5px;
+          font-size: 16px;
+          cursor: pointer;
+          width: 100%;
+        }
+    
+        .submit-btn {
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: #fff;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+    
+        .submit-btn:hover {
+          background-color: blue;
+        }
+        #newprice {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-weight: bold;
+          color: red;
+          height:50px;
+          font-size: 20px;
+          width:100px;
+          
+        }
+       
+    </style>
+   
+    
+    <body>
+        <div class="container">
+            <div class="bars"></div>
+        </div>
+    
+       
+        <nav>
+            <h2 id="welcome">Hello User !</h2>
+            <div class="close">
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="/sellerhome">Home</a></li>
+                <li><a href="/sellerorder/">My Order Status </a></li>
+                <hr>
+                <li><a href="/">Log Out </a></li>
+                <hr>
+            </ul>
+        </nav>
+        <form action="" method="post"   enctype="multipart/form-data" >
+          {% csrf_token %}
+  <div class="container2">
+    <h2>Select Company and Model Of Your Speaker</h2>
+	<div class="input-group">
+		<label for="company">Select Company:</label>
+		<select id="company" onchange="populateModels()">
+			<option value="">--Please Select--</option>
+		</select>
+	</div>
+
+	<div class="input-group">
+		<label for="model">Select Model:</label>
+		<select id="model">
+			<option value="">--Please Select--</option>
+		</select>
+	</div>
+
+
+  <div class="input-group">
+    <label for="condition">Overall Condition:</label>
+    <select id="condition" name="condition">
+      <option value="best">Best</option>
+      <option value="good">Good</option>
+      <option value="poor">Poor</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <h3>Select Image </h3>
+     <input class="file-upload-input" type="file" onchange="readURL(this)" accept="Image/*" name="image" id="image">
+   </div>
+
+  <input type="hidden" id="selected_model_name" name="selected_model_name">
+  <input type="hidden" id="selected_model_price" name="selected_model_price">
+  <input type="hidden" id="selected_company_name" name="selected_company_name">
+  <input type="hidden" id="condition_value" name="condition_value">
+  <button class="submit-btn" type="button" onclick="getValue()">Generate E-Waste Price Of  Product</button>
+  <input type="text" id="newprice" name="newprice" readonly> 
+  
+  <br><br><br>
+  <div class="input-group">
+    <label for="condition">PickUp Address :</label>
+    <input type="text" name="address" id="address" placeholder="Enter your address" required style="width: 100%;">
+
+  </div>
+  <button class="submit-btn" type="submit">Sell Speaker </button>
+
+</div>
+</form>
+       
+    </body>
+    
+      <script>
+
+
+
+
+
+        const open = document.querySelector('.container');
+		const close = document.querySelector('.close');
+		var tl = gsap.timeline({ defaults: { duration: 1, ease: 'expo.inOut' } });
+		open.addEventListener('click', () => {
+			if (tl.reversed()) {
+				tl.play();
+			} else {
+                
+                document.getElementById("welcome").innerHTML="Hello Shree !";
+				tl.to('nav', { right: 0 })
+					.to('nav', { height: '100vh' }, '-=.1')
+					.to('nav ul li a', { opacity: 1, pointerEvents: 'all', stagger: .2 }, '-=.8')
+					.to('.close', { opacity: 1, pointerEvents: 'all' }, "-=.8")
+					.to('nav h2', { opacity: 1 }, '-=1');
+			}
+		});
+
+		close.addEventListener('click', () => {
+			tl.reverse();
+		});
+
+    let headphonesData = [];
+
+// Load the headphones data from the JSON file
+fetch("{% static 'jsonapi/speaker.json' %}")
+  .then(response => response.json())
+  .then(data => {
+    headphonesData = data;
+
+    // Populate the company dropdown
+    const companyDropdown = document.getElementById("company");
+    headphonesData.forEach(company => {
+      const option = document.createElement("option");
+      option.value = company.company;
+      option.text = company.company;
+      companyDropdown.appendChild(option);
+    });
+
+    // Call populateModels() function when the company dropdown value changes
+    companyDropdown.addEventListener("change", populateModels);
+  })
+  .catch(error => console.error(error));
+
+// Populate the models dropdown based on the selected company
+const populateModels = () => {
+  const selectedCompany = document.getElementById("company").value;
+  const selectedCompanyData = headphonesData.find(company => company.company === selectedCompany);
+  const modelsDropdown = document.getElementById("model");
+  modelsDropdown.innerHTML = "<option value=''>--Please Select--</option>";
+
+  selectedCompanyData.Models.forEach(model => {
+    const option = document.createElement("option");
+    const modelName = Object.keys(model)[0];
+    option.value = modelName;
+    option.text = modelName + " - " + model[modelName] + " Rs";
+    modelsDropdown.appendChild(option);
+  });
+};
+
+function getValue() {
+  const modelSelect = document.querySelector('#model');
+  const selectedModelName = modelSelect.value;
+  const selectedModelPrice = modelSelect.options[modelSelect.selectedIndex].text.split(' - ')[1].split(' Rs')[0];
+  const selectedCompany = document.querySelector('#company').value;
+  const modelNameInput = document.querySelector('#selected_model_name');
+  const modelPriceInput = document.querySelector('#selected_model_price');
+  const companyNameInput = document.querySelector('#selected_company_name');
+  modelNameInput.value = selectedModelName;
+  modelPriceInput.value = selectedModelPrice;
+  companyNameInput.value = selectedCompany;
+  
+  const selectElement = document.querySelector('#condition');
+  const selectedValue = selectElement.value;
+  const conditioninput = document.querySelector('#condition_value');
+  conditioninput.value = selectedValue;
+  console.log('Selected Model Name:', selectedModelName);
+  console.log('Selected Model Price:', selectedModelPrice);
+  console.log('Selected Company:', selectedCompany);
+  console.log(conditioninput.value);
+  let ewastePrice = 10;
+  if (conditioninput.value === 'best') {
+   
+    ewastePrice = selectedModelPrice * 0.1;
+  } else if (conditioninput.value === "good") {
+    ewastePrice = selectedModelPrice * 0.075;
+  } else if (conditioninput.value === "poor") {
+    ewastePrice = selectedModelPrice * 0.05;
+  }
+  document.getElementById("newprice").value = "   " + ewastePrice +  "Rs ";
+  console.log("E-waste price:", ewastePrice);
+
+  
+
+}
+
+
+
+      </script>
+        
+  
+</html>

@@ -1,0 +1,77 @@
+[
+    {
+        "company": "LG",
+        "Models": [
+            {"LG model1": 500},
+            {"LG model2": 1000},
+            {"LG model3": 750},
+            {"LG model4": 1500},
+            {"LG model5": 2000},
+            {"LG model6": 3000},
+            {"LG model7": 2500},
+            {"LG model8": 1800}
+           
+        ]
+    },
+    {
+        "company": "Samsung",
+        "Models": [
+            {"Samsung model1": 800},
+            {"Samsung model2": 1200},
+            {"Samsung model3": 900},
+            {"Samsung model4": 1500},
+            {"Samsung model5": 2000},
+            {"Samsung model6": 3000},
+            {"Samsung model7": 2500},
+            {"Samsung model8": 1800}
+           
+        ]
+    },
+    {
+        "company": "ONIDA",
+        "Models": [
+            {"ONIDA model1": 1000},
+            {"ONIDA model2": 1500},
+            {"ONIDA model3": 1200},
+            {"ONIDA model4": 1800},
+            {"ONIDA model5": 2200}
+           
+        ]
+    },
+    {
+        "company": "SONY",
+        "Models": [
+            {"SONY model1": 700},
+            {"SONY model2": 1000},
+            {"SONY model3": 800},
+            {"SONY model4": 1200},
+            {"SONY model5": 1600},
+            {"SONY model6": 2500},
+            {"SONY model7": 2000},
+            {"SONY model8": 1500},
+            {"SONY model9": 1000},
+            {"SONY model10": 750}
+        ]
+    },
+    {
+        "company": "VU",
+        "Models": [
+            {"VU model1": 600},
+            {"VU model2": 900},
+            {"VU model3": 700}
+          
+        ]
+    },
+    {
+        "company": "iTel",
+        "Models": [
+            {"iTel model1": 500},
+            {"iTel model2": 1000},
+            {"iTel model3": 750},
+            {"iTel model4": 1500},
+            {"iTel model5": 2000},
+            {"iTel model6": 3000}
+           
+        ]
+    }
+]
