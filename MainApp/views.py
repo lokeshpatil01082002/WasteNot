@@ -4,7 +4,7 @@ from MainApp.models import UserDetails,Headphones,phones,speakers,tvs,watches,Ke
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 
 # Create your views here.
@@ -78,37 +78,129 @@ def SignupPage(request):
 def SellerHomePage(request):
    return render(request,'sellerhome.html')
 def VendorHomePage(request):
-        y=UserDetails.objects.filter(email=request.user)
-        pin=0
-        for i in y:
-           pin=i.pin
-        headphone=Headphones.objects.all().filter(userpin=pin)
-        phone=phones.objects.all().filter(userpin=pin)
-        tv=tvs.objects.all().filter(userpin=pin)
-        speaker=speakers.objects.all().filter(userpin=pin)
-        watch=watches.objects.all().filter(userpin=pin)
-        keyboard=Keyboards.objects.all().filter(userpin=pin)
-        m=mouse.objects.all().filter(userpin=pin)
-        laptop=laptops.objects.all().filter(userpin=pin)
-        return render (request,'vendorhome.html',{'headphone':headphone,'phone':phone,'tv':tv,'speaker':speaker,'watch':watch,'keyboard':keyboard,'mouse':m,'laptop':laptop})
+     if request.method=="POST":
+      update=request.POST.get('status_change');
+      orderid=request.POST.get('order');
+      product_type=request.POST.get('product');
+      print("Update : ",  update)
+      print(orderid)
+      print(product_type)
+      if update=="A":
+         update="Accepted"
+      if update=="C":
+         update="Completed"
+      if product_type=="headphone":
+         order = Headphones.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+      if product_type=="headphone":
+         order = Headphones.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+      if product_type=="laptop":
+         order = laptops.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+      if product_type=="phone":
+         order = phones.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+      if product_type=="keyboard":
+         order = Keyboards.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+      if product_type=="mouse":
+         order = mouse.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+      if product_type=="speaker":
+         order = speakers.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+      if product_type=="tv":
+         order = tvs.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+      if product_type=="watch":
+         order = watches.objects.get(id=orderid)
+         order.status = update
+         if update!="Completed" : order.expected_date = datetime.now() + timedelta(days=4)
+         order.expected_date = datetime.now() + timedelta(days=4)
+         order.save()
+     y=UserDetails.objects.filter(email=request.user)
+     pin=0
+     for i in y:
+      pin=i.pin
+     headphone=Headphones.objects.all().filter(userpin=pin)
+     phone=phones.objects.all().filter(userpin=pin)
+     tv=tvs.objects.all().filter(userpin=pin)
+     speaker=speakers.objects.all().filter(userpin=pin)
+     watch=watches.objects.all().filter(userpin=pin)
+     keyboard=Keyboards.objects.all().filter(userpin=pin)
+     m=mouse.objects.all().filter(userpin=pin)
+     laptop=laptops.objects.all().filter(userpin=pin)
+     return render (request,'vendorhome.html',{'headphone':headphone,'phone':phone,'tv':tv,'speaker':speaker,'watch':watch,'keyboard':keyboard,'mouse':m,'laptop':laptop})
   
 def OrgHomePage(request):
    return render(request,'orghome.html')
 
 def SellerOrderPage(request):
-    if request.method=='GET':
-        headphone=Headphones.objects.all().filter(userid=request.user)
-        phone=phones.objects.all().filter(userid=request.user)
-        tv=tvs.objects.all().filter(userid=request.user)
-        speaker=speakers.objects.all().filter(userid=request.user)
-        watch=watches.objects.all().filter(userid=request.user)
-        keyboard=Keyboards.objects.all().filter(userid=request.user)
-        m=mouse.objects.all().filter(userid=request.user)
-        laptop=laptops.objects.all().filter(userid=request.user)
-        return render (request,'sellerorder.html',{'headphone':headphone,'phone':phone,'tv':tv,'speaker':speaker,'watch':watch,'keyboard':keyboard,'mouse':m,'laptop':laptop})
+     if request.method=='POST':
+        
+        orderid=request.POST.get('order');
+        product_type=request.POST.get('product');
+        
+        if product_type=="headphone":
+         order = Headphones.objects.get(id=orderid)
+         order.delete()
+        if product_type=="phone":
+         order = phones.objects.get(id=orderid)
+         order.delete()
+        if product_type=="mouse":
+         order = mouse.objects.get(id=orderid)
+         order.delete()
+        if product_type=="keyboard":
+         order = Keyboards.objects.get(id=orderid)
+         order.delete()
+        if product_type=="speaker":
+         order = speakers.objects.get(id=orderid)
+         order.delete()
+        if product_type=="tve":
+         order = tvs.objects.get(id=orderid)
+         order.delete()
+        if product_type=="watch":
+         order = watches.objects.get(id=orderid)
+         order.delete()
+        if product_type=="laptop":
+         order = laptops.objects.get(id=orderid)
+         order.delete()
     
-       
-    return render (request,'sellerorder.html')
+     headphone=Headphones.objects.all().filter(userid=request.user)
+     phone=phones.objects.all().filter(userid=request.user)
+     tv=tvs.objects.all().filter(userid=request.user)
+     speaker=speakers.objects.all().filter(userid=request.user)
+     watch=watches.objects.all().filter(userid=request.user)
+     keyboard=Keyboards.objects.all().filter(userid=request.user)
+     m=mouse.objects.all().filter(userid=request.user)
+     laptop=laptops.objects.all().filter(userid=request.user)
+     return render (request,'sellerorder.html',{'headphone':headphone,'phone':phone,'tv':tv,'speaker':speaker,'watch':watch,'keyboard':keyboard,'mouse':m,'laptop':laptop})
+     
+    
 def SellHeadphonePage(request):
     if request.method == 'POST':
         model=request.POST.get('selected_model_name');

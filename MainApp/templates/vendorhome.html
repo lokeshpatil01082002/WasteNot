@@ -14,8 +14,7 @@
         <!-- <script src="./js/animation.js"></script> -->
        
         
-        <link rel="stylesheet"  href="home.css"> 
-        <script src="home.js" type="module"></script>
+      
        
     </head>
     
@@ -269,7 +268,12 @@
           margin-right: 1rem;
         }
         .disabled{
-            background-color: grey !important
+            background-color: grey;
+            color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: none;
         }
         .accepted {
           background-color: #28a745;
@@ -305,7 +309,11 @@
     
     <body>
        
-    
+        <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" id="status_change" name="status_change"/> 
+          <input type="hidden" id="order" name="order"/>
+          <input type="hidden" id="product" name="product"/>
         <div class="orders-container">
          
           <table class="orders-table">
@@ -332,7 +340,7 @@
                 <td>{{ order.company_name }}</td>
                 <td>{{ order.model_no }}</td>
                 <td>{{ order.price }}</td>
-                <td>{{ order.status }}</td>
+                <td>{{ order.status }} </td>
                 <td>{{ order.overall_condition }}</td>
                 <td>{{ order.order_date }}</td>
                 <td>{{ order.expected_date }}</td>
@@ -343,19 +351,18 @@
                 
                 <td>
              
-                  {% if order.status == "S" %}
+                  {% if order.status == "Accepted" %}
                      
-                      <button class="disabled accepted" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed</button>
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','headphone')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
-                      <p>DEBUG: Order status is 'Completed'</p>
-                      <button class="accepted" disabled>Order Accepted </button><br><br>
-                      <button class="completed" disabled>Order Completed</button>
+                    
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="disabled" disabled>Order Completed</button>
                   {% else %}
-                      <p>DEBUG: Order status is neither 'Order Submitted' nor 'Completed'</p>
-                      <p> Order status is "{{ order.status }}"</p>
-                      <button class="accepted" onclick="cancelOrder('{{ order.id }}')">Order Accepted </button><br><br>
-                      <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed</button>
+                    
+                  <button class="accepted" onclick="acceptOrder('{{ order.id }}', 'headphone')">Order Accepted</button><br><br>
+                  <button class="disabled" disabled>Order Completed</button>
                   {% endif %}
               </td>
               
@@ -376,9 +383,23 @@
                 <td>Name  : {{ order.name }}   <br> Phone :  {{ order.phone  }}   </td>
      
                 <td>{{ order.address  }}</td>
-                <td><button class="accepted" onclick="cancelOrder('{{ order.id }}')">Order Accepted </button><br> <br>
-                  <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed
-                      </button></td>
+                <td>
+             
+                  {% if order.status == "Accepted" %}
+                     
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="completed" onclick="CompleteOrder('{{ order.id }}', 'phone')">Complete Order </button>
+                  {% elif order.status == 'Completed' %}
+                    
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="disabled" disabled>Order Completed</button>
+                  {% else %}
+                    
+                  <button class="accepted" onclick="acceptOrder('{{ order.id }}', 'phone')">Order Accepted</button><br><br>
+                  <button class="disabled" disabled>Order Completed</button>
+                  {% endif %}
+              </td>
+              
               </tr>
             {% endfor %}
           
@@ -395,9 +416,23 @@
                 <td>Name  : {{ order.name }}   <br> Phone :  {{ order.phone  }}   </td>
      
                 <td>{{ order.address  }}</td>
-                <td><button class="accepted" onclick="cancelOrder('{{ order.id }}')">Order Accepted </button><br> <br>
-                  <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed
-                      </button></td>
+                <td>
+             
+                  {% if order.status == "Accepted" %}
+                     
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','laptop')">Complete Order </button>
+                  {% elif order.status == 'Completed' %}
+                    
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="disabled" disabled>Order Completed</button>
+                  {% else %}
+                    
+                  <button class="accepted" onclick="acceptOrder('{{ order.id }}', 'laptop')">Order Accepted</button><br><br>
+                  <button class="disabled" disabled>Order Completed</button>
+                  {% endif %}
+              </td>
+              
               </tr>
             {% endfor %}
       
@@ -414,10 +449,23 @@
                 <td>Name  : {{ order.name }}   <br> Phone :  {{ order.phone  }}   </td>
      
                 <td>{{ order.address  }}</td>
-                <td><button class="accepted" onclick="cancelOrder('{{ order.id }}')">Order Accepted </button><br> <br>
-                  <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed
-                      </button></td>
-              </tr>
+                <td>
+             
+                  {% if order.status == "Accepted" %}
+                     
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','watch')">Complete Order </button>
+                  {% elif order.status == 'Completed' %}
+                    
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="disabled" disabled>Order Completed</button>
+                  {% else %}
+                    
+                  <button class="accepted" onclick="acceptOrder('{{ order.id }}', 'watch')">Order Accepted</button><br><br>
+                  <button class="disabled" disabled>Order Completed</button>
+                  {% endif %}
+              </td>
+              
             {% endfor %}
       
             {% for order in tv %}
@@ -433,9 +481,23 @@
                 <td>Name  : {{ order.name }}   <br> Phone :  {{ order.phone  }}   </td>
      
                 <td>{{ order.address  }}</td>
-                <td><button class="accepted" onclick="cancelOrder('{{ order.id }}')">Order Accepted </button><br> <br>
-                  <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed
-                      </button></td>
+                <td>
+             
+                  {% if order.status == "Accepted" %}
+                     
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','tv')">Complete Order </button>
+                  {% elif order.status == 'Completed' %}
+                    
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="disabled" disabled>Order Completed</button>
+                  {% else %}
+                    
+                  <button class="accepted" onclick="acceptOrder('{{ order.id }}', 'tv')">Order Accepted</button><br><br>
+                  <button class="disabled" disabled>Order Completed</button>
+                  {% endif %}
+              </td>
+              
               </tr>
             {% endfor %}
          
@@ -452,9 +514,23 @@
                 <td>Name  : {{ order.name }}   <br> Phone :  {{ order.phone  }}   </td>
      
                 <td>{{ order.address  }}</td>
-                <td><button class="accepted" onclick="cancelOrder('{{ order.id }}')">Order Accepted </button><br> <br>
-                  <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed
-                      </button></td>
+                <td>
+             
+                  {% if order.status == "Accepted" %}
+                     
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','speaker')">Complete Order </button>
+                  {% elif order.status == 'Completed' %}
+                    
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="disabled" disabled>Order Completed</button>
+                  {% else %}
+                    
+                  <button class="accepted" onclick="acceptOrder('{{ order.id }}', 'speaker')">Order Accepted</button><br><br>
+                  <button class="disabled" disabled>Order Completed</button>
+                  {% endif %}
+              </td>
+              
               </tr>
             {% endfor %}
          
@@ -470,9 +546,23 @@
                 <td>{{ order.expected_date }}</td>
                 <td>Name  : {{ order.name }}   <br> Phone :  {{ order.phone  }}   </td>
                 <td>{{ order.address  }}</td>
-                <td><button class="accepted" onclick="cancelOrder('{{ order.id }}')">Order Accepted </button><br> <br>
-                  <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed
-                      </button></td>
+                <td>
+             
+                  {% if order.status == "Accepted" %}
+                     
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','mouse')">Complete Order </button>
+                  {% elif order.status == 'Completed' %}
+                    
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="disabled" disabled>Order Completed</button>
+                  {% else %}
+                    
+                  <button class="accepted" onclick="acceptOrder('{{ order.id }}', 'mouse')">Order Accepted</button><br><br>
+                  <button class="disabled" disabled>Order Completed</button>
+                  {% endif %}
+              </td>
+              
               </tr>
             {% endfor %}
           
@@ -487,20 +577,55 @@
                 <td>Name  : {{ order.name }}   <br> Phone :  {{ order.phone  }}   </td>
      
                 <td>{{ order.address  }}</td>
-                <td><button class="accepted" onclick="cancelOrder('{{ order.id }}')">Order Accepted </button><br> <br>
-                  <button class="completed" onclick="cancelOrder('{{ order.id }}')">Order Completed
-                      </button></td>
+                <td>
+             
+                  {% if order.status == "Accepted" %}
+                     
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','keyboard')">Complete Order </button>
+                  {% elif order.status == 'Completed' %}
+                    
+                      <button class="disabled" disabled>Order Accepted </button><br><br>
+                      <button class="disabled" disabled>Order Completed</button>
+                  {% else %}
+                      
+                  <button class="accepted" onclick="acceptOrder('{{ order.id }}', 'keyboard')">Order Accepted</button><br><br>
+                  <button class="disabled" disabled>Order Completed</button>    
+                  {% endif %}
+              </td>
+              
               </tr>
             {% endfor %}
           </tbody>
         </table>
-
+      </form>
     </body>
     
       <script>
 
 
+        function acceptOrder(orderId,product) {
+        
+       
+          document.getElementById("status_change").value = "A";
+          document.getElementById("order").value = orderId;
+          document.getElementById("product").value = product;
+        
+          document.forms[0].submit();
+        }
 
+
+        
+        function CompletetOrder(orderId,product) {
+        
+       
+          console.log("complete");
+          document.getElementById("status_change").value = "C";
+          document.getElementById("order").value = orderId;
+          document.getElementById("product").value = product;
+          
+          document.forms[0].submit();
+        }
 
 
         const open = document.querySelector('.container');

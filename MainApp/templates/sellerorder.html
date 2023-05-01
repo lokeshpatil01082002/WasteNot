@@ -287,7 +287,11 @@
     
     <body>
        
-    
+      <form method="POST">
+        {% csrf_token %}
+      
+        <input type="hidden" id="order" name="order"/>
+        <input type="hidden" id="product" name="product"/>
         <div class="orders-container">
          
           <table class="orders-table">
@@ -317,7 +321,7 @@
                 <td>{{ order.order_date }}</td>
                 <td>{{ order.expected_date }}</td>
                
-                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}')">Cancel  </button></td>
+                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}','headphone')">Cancel  </button></td>
               </tr>
             {% endfor %}
          
@@ -331,7 +335,7 @@
                 <td>{{ order.overall_condition }}</td>
                 <td>{{ order.order_date }}</td>
                 <td>{{ order.expected_date }}</td>
-                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}')">Cancel </button></td>
+                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}','phone')">Cancel </button></td>
               </tr>
             {% endfor %}
           
@@ -345,7 +349,7 @@
                 <td>{{ order.overall_condition }}</td>
                 <td>{{ order.order_date }}</td>
                 <td>{{ order.expected_date }}</td>
-                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}')">Cancel </button></td>
+                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}','laptop')">Cancel </button></td>
               </tr>
             {% endfor %}
       
@@ -359,7 +363,7 @@
                 <td>{{ order.overall_condition }}</td>
                 <td>{{ order.order_date }}</td>
                 <td>{{ order.expected_date }}</td>
-                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}')">Cancel </button></td>
+                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}','watch')">Cancel </button></td>
               </tr>
             {% endfor %}
       
@@ -373,7 +377,7 @@
                 <td>{{ order.overall_condition }}</td>
                 <td>{{ order.order_date }}</td>
                 <td>{{ order.expected_date }}</td>
-                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}')">Cancel </button></td>
+                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}','tv')">Cancel </button></td>
               </tr>
             {% endfor %}
          
@@ -387,7 +391,7 @@
                 <td>{{ order.overall_condition }}</td>
                 <td>{{ order.order_date }}</td>
                 <td>{{ order.expected_date }}</td>
-                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}')">Cancel </button></td>
+                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}','speaker')">Cancel </button></td>
               </tr>
             {% endfor %}
          
@@ -401,7 +405,7 @@
                 <td>{{ order.overall_condition }}</td>
                 <td>{{ order.order_date }}</td>
                 <td>{{ order.expected_date }}</td>
-                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}')">Cancel </button></td>
+                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}','mouse')">Cancel </button></td>
               </tr>
             {% endfor %}
           
@@ -413,21 +417,30 @@
                 <td>{{ order.price }}</td>
                 <td>{{ order.status }}</td>
                 <td>{{ order.overall_condition }}</td>
-                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}')">Cancel </button></td>
+                <td><button class="cancel" onclick="cancelOrder('{{ order.id }}','keyboard')">Cancel </button></td>
               </tr>
             {% endfor %}
           </tbody>
         </table>
-
+      </div>
+    </form>
     </body>
     
       <script>
 
+        function cancelOrder(orderId,product) {
+        
+       
+       
+          document.getElementById("order").value = orderId;
+          document.getElementById("product").value = product;
+        
+          document.forms[0].submit();
+        }
 
 
 
-
-        const open = document.querySelector('.container');
+    const open = document.querySelector('.container');
 		const close = document.querySelector('.close');
 		var tl = gsap.timeline({ defaults: { duration: 1, ease: 'expo.inOut' } });
 		open.addEventListener('click', () => {
