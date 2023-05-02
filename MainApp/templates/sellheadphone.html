@@ -451,12 +451,11 @@ function getValue() {
   console.log(conditioninput.value);
   let ewastePrice = 10;
   if (conditioninput.value === 'best') {
-   
-    ewastePrice = selectedModelPrice * 0.1;
+    ewastePrice = Math.floor(selectedModelPrice * 0.1);
   } else if (conditioninput.value === "good") {
-    ewastePrice = selectedModelPrice * 0.075;
+    ewastePrice = Math.floor(selectedModelPrice * 0.075);
   } else if (conditioninput.value === "poor") {
-    ewastePrice = selectedModelPrice * 0.05;
+    ewastePrice = Math.floor(selectedModelPrice * 0.05);
   }
   document.getElementById("newprice").value =   ewastePrice +  "Rs ";
   console.log("E-waste price:", ewastePrice);
