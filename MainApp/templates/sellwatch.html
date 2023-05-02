@@ -209,7 +209,7 @@
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
         }
     
         .input-group label {
@@ -261,6 +261,24 @@
           
         }
        
+        .condition-check{
+          background-color: #edede9;
+          padding-left: 2rem;
+          padding-block: 1rem;
+          border-radius: 1rem;
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+          max-width: 80%;
+          text-align: justify;
+          text-justify: inter-word;
+        }
+        .condition-check ul li{
+          list-style: none;
+        }
+       .note{
+        color: #ae2012;
+        font: small;
+       }
+       
     </style>
    
     
@@ -311,6 +329,15 @@
     </select>
   </div>
 
+  <div class="input-group condition-check">
+    <p class="note"> Note* </p>
+     <ul>
+     <li>Best: No physical damage but low performance</li>
+     <li>Good: Damages can be repaired but performance is low or used for long period of time</li>
+     <li>Worst: Significant physical damage, such as broken scroll wheel or damaged cord and beyond repair.</li>
+     </ul>
+   </div>
+
   <div class="input-group">
     <h3>Select Image </h3>
      <input class="file-upload-input" type="file" onchange="readURL(this)" accept="Image/*" name="image" id="image">
@@ -323,7 +350,7 @@
   <button class="submit-btn" type="button" onclick="getValue()">Generate E-Waste Price Of  Product</button>
   <input type="text" id="newprice" name="newprice" readonly> 
   
-  <br><br><br>
+  <br>
   <div class="input-group">
     <label for="condition">PickUp Address :</label>
     <input type="text" name="address" id="address" placeholder="Enter your address" required style="width: 100%;">
@@ -423,12 +450,11 @@ function getValue() {
   console.log(conditioninput.value);
   let ewastePrice = 10;
   if (conditioninput.value === 'best') {
-   
-    ewastePrice = selectedModelPrice * 0.1;
+    ewastePrice = Math.floor(selectedModelPrice * 0.1);
   } else if (conditioninput.value === "good") {
-    ewastePrice = selectedModelPrice * 0.075;
+    ewastePrice = Math.floor(selectedModelPrice * 0.075);
   } else if (conditioninput.value === "poor") {
-    ewastePrice = selectedModelPrice * 0.05;
+    ewastePrice = Math.floor(selectedModelPrice * 0.05);
   }
   document.getElementById("newprice").value = "   " + ewastePrice +  "Rs ";
   console.log("E-waste price:", ewastePrice);

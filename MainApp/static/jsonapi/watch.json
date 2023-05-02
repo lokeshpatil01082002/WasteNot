@@ -2,51 +2,111 @@
     {
         "company": "Boat",
         "Models": [
-            {"Boat Model 1": 5000},
-            {"Boat Model 2": 7000},
-            {"Boat Model 3": 9000},
-            {"Boat Model 4": 11000},
-            {"Boat Model 5": 13000}
+            {
+                "Boat Flash Watch": 1799
+                },
+                {
+                "Boat Storm Smartwatch": 2999
+                },
+                {
+                "Boat ProGear B20": 2999
+                },
+                {
+                "Boat Xtend Smartwatch": 3999
+              }
+              
         ]
     },
     {
         "company": "Firebolt",
         "Models": [
-            {"Firebolt Model 1": 6000},
-            {"Firebolt Model 2": 8000},
-            {"Firebolt Model 3": 10000},
-            {"Firebolt Model 4": 12000},
-            {"Firebolt Model 5": 14000}
-        ]
-    },
-    {
-        "company": "Noise",
-        "Models": [
-            {"Noise Model 1": 5500},
-            {"Noise Model 2": 7500},
-            {"Noise Model 3": 9500},
-            {"Noise Model 4": 11500},
-            {"Noise Model 5": 13500}
+            {
+                "Fire-Boltt SpO2 2.0 Smart Watch": 2999
+                },
+                {
+                "Fire-Boltt Beast Smartwatch": 3299
+                },
+                {
+                "Fire-Boltt Talk Smart Watch": 4499
+                },
+                {
+                "Fire-Boltt 360 Degree Smartwatch": 5999
+                },
+                {
+                "Fire-Boltt Ninja Smartwatch": 9999
+              }
+              
         ]
     },
     {
         "company": "Apple",
         "Models": [
-            {"Apple Watch Series 1": 15000},
-            {"Apple Watch Series 2": 20000},
-            {"Apple Watch Series 3": 25000},
-            {"Apple Watch Series 4": 30000},
-            {"Apple Watch Series 5": 35000}
+            {
+                "Apple Watch Series 7 GPS 41mm": 40900
+                },
+                {
+                "Apple Watch Series 7 GPS 45mm": 43900
+                },
+                {
+                "Apple Watch Series 7 GPS+Cellular 41mm": 52900
+                },
+                {
+                "Apple Watch Series 7 GPS+Cellular 45mm": 55900
+                },
+                {
+                "Apple Watch SE GPS 40mm": 26900
+                },
+                {
+                "Apple Watch SE GPS 44mm": 29900
+                },
+                {
+                "Apple Watch SE GPS+Cellular 40mm": 32900
+                },
+                {
+                "Apple Watch SE GPS+Cellular 44mm": 35900
+                },
+                {
+                "Apple Watch Series 6 GPS 40mm": 35900
+                },
+                {
+                "Apple Watch Series 6 GPS 44mm": 38900
+                },
+                {
+                "Apple Watch Series 6 GPS+Cellular 40mm": 49900
+                },
+                {
+                "Apple Watch Series 6 GPS+Cellular 44mm": 52900
+                }                               
         ]
     },
     {
         "company": "Samsung",
         "Models": [
-            {"Samsung Galaxy Watch": 12000},
-            {"Samsung Gear S3": 15000},
-            {"Samsung Galaxy Watch Active": 18000},
-            {"Samsung Gear Sport": 21000},
-            {"Samsung Galaxy Watch 3": 25000}
+            {
+                "Samsung Galaxy Watch Active 2 (40mm)": 19990
+                },
+                {
+                "Samsung Galaxy Watch Active 2 (44mm)": 21990
+                },
+                {
+                "Samsung Galaxy Watch 3 (41mm)": 27490
+                },
+                {
+                "Samsung Galaxy Watch 3 (45mm)": 29990
+                },
+                {
+                "Samsung Galaxy Watch 4 (40mm)": 23999
+                },
+                {
+                "Samsung Galaxy Watch 4 (44mm)": 26999
+                },
+                {
+                "Samsung Galaxy Watch 4 Classic (42mm)": 33999
+                },
+                {
+                "Samsung Galaxy Watch 4 Classic (46mm)": 35999
+              }
+              
         ]
     }
 ]

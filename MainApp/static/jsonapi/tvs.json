@@ -2,76 +2,88 @@
     {
         "company": "LG",
         "Models": [
-            {"LG model1": 500},
-            {"LG model2": 1000},
-            {"LG model3": 750},
-            {"LG model4": 1500},
-            {"LG model5": 2000},
-            {"LG model6": 3000},
-            {"LG model7": 2500},
-            {"LG model8": 1800}
+            
+            {
+                "LG 32LM565BPTA": 23990
+                },
+                {
+                "LG 43LM5650PTA": 39990
+                },
+                {
+                "LG 43UM7290PTF": 48990
+                },
+                {
+                "LG 55UP7500PTA": 69990
+                },
+                {
+                "LG 65UP7750PTA": 124990
+              }
+              
            
         ]
     },
     {
         "company": "Samsung",
         "Models": [
-            {"Samsung model1": 800},
-            {"Samsung model2": 1200},
-            {"Samsung model3": 900},
-            {"Samsung model4": 1500},
-            {"Samsung model5": 2000},
-            {"Samsung model6": 3000},
-            {"Samsung model7": 2500},
-            {"Samsung model8": 1800}
-           
-        ]
-    },
-    {
-        "company": "ONIDA",
-        "Models": [
-            {"ONIDA model1": 1000},
-            {"ONIDA model2": 1500},
-            {"ONIDA model3": 1200},
-            {"ONIDA model4": 1800},
-            {"ONIDA model5": 2200}
+            {
+                "Samsung 32T4500 32-inch HD Ready Smart LED TV": 21490
+                },
+                {
+                "Samsung 43TUE60FA 43-inch 4K Smart Crystal UHD TV": 45990
+                },
+                {
+                "Samsung 55Q70A 55-inch 4K Smart QLED TV": 117990
+                },
+                {
+                "Samsung 65Q800T 65-inch 8K Smart QLED TV": 599990
+                },
+                {
+                "Samsung 75Q900TS 75-inch 8K Smart QLED TV": 1299990
+              }
            
         ]
     },
     {
         "company": "SONY",
         "Models": [
-            {"SONY model1": 700},
-            {"SONY model2": 1000},
-            {"SONY model3": 800},
-            {"SONY model4": 1200},
-            {"SONY model5": 1600},
-            {"SONY model6": 2500},
-            {"SONY model7": 2000},
-            {"SONY model8": 1500},
-            {"SONY model9": 1000},
-            {"SONY model10": 750}
+            {
+                "Sony Bravia 32W830 32-inch Full HD Smart LED TV":34990
+                },
+                {
+                "Sony Bravia 43X80J 43-inch 4K Ultra HD Smart LED TV":59990
+                },
+                {
+                "Sony Bravia 55X90J 55-inch 4K Ultra HD Smart LED TV": 129990
+                },
+                {
+                "Sony Bravia 65X90J 65-inch 4K Ultra HD Smart LED TV": 229990
+                },
+                {
+                "Sony Bravia 75X90J 75-inch 4K Ultra HD Smart LED TV": 449990
+              }
+              
         ]
     },
     {
         "company": "VU",
         "Models": [
-            {"VU model1": 600},
-            {"VU model2": 900},
-            {"VU model3": 700}
+            {
+                "VU 32-inch HD Ready Smart LED TV": 14999
+                },
+                {
+                "VU 43-inch 4K Ultra HD Smart LED TV": 28999
+                },
+                {
+                "VU 50-inch 4K Ultra HD Smart LED TV": 32999
+                },
+                {
+                "VU 55-inch 4K Ultra HD Smart LED TV": 37999
+                },
+                {
+                "VU 65-inch 4K Ultra HD Smart LED TV": 52999
+              }
+              
           
-        ]
-    },
-    {
-        "company": "iTel",
-        "Models": [
-            {"iTel model1": 500},
-            {"iTel model2": 1000},
-            {"iTel model3": 750},
-            {"iTel model4": 1500},
-            {"iTel model5": 2000},
-            {"iTel model6": 3000}
-           
         ]
     }
 ]

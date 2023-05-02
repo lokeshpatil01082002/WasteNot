@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+   
+<title>Ordes Status </title>
+
+
+    <head>
+        <title>Vendor order Page </title>
+        <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+        <!-- <script src="./js/animation.js"></script> -->
+       
+        
+        <link rel="stylesheet"  href="home.css"> 
+        <script src="home.js" type="module"></script>
+       
+    </head>
+    
+    
+    <header>
+      <img src="/static/images/newlogo.png" alt="WasteNot Logo">
+      <h1>WasteNot</h1>
+      <div class="container">
+        <div class="bars"></div>
+    </div>
+
+   
+    <nav>
+        <h2 id="welcome">Hello User !</h2>
+        <div class="close">
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="/vendorhome">Home</a></li>
+            <li><a href="/vendororder/">Available Stocks  </a></li>
+            <hr>
+            <li><a href="/">Log Out </a></li>
+            <hr>
+        </ul>
+    </nav>
+    </header>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+          font-family: "Montserrat", sans-serif;
+          background-color: #E7FFE7;
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          margin-top : 20px;
+          
+        }
+        
+        h1 {
+            font-size: 40px;
+          text-align: center;
+        }
+        
+        .container{
+            cursor: pointer;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            width: 30px;
+            height: 20px;
+        }
+        
+        .bars{
+            width: 30px;
+            height: 4px;
+            background: #000;
+            position:fixed;
+            margin-top:20px;
+        }
+        
+        .bars::before,
+        .bars::after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background: #000;
+        }
+        
+        .bars::before{
+            margin-top: 9px;
+        }
+        
+        .bars::after{
+            margin-top: 18px;
+        }
+        
+        nav {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: green;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          right: -200vw;
+        }
+        
+        nav ul {
+            list-style: none;
+        }
+        
+        nav ul li{
+            margin: 50px 0;
+        }
+        
+        nav ul li a{
+            color: #fafafa;
+            font-size: 2em;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        nav ul li a:after{
+            content: '';
+            width: 100%;
+            position: absolute;
+            height: 3px;
+            border-radius: 5px;
+            background: #fff;
+            bottom: -10px;
+            left: 0;
+            transform-origin: left;
+            transition: transform .5s ease;
+            transform: scaleX(0);
+        }
+        
+        
+        nav ul li a:hover:after{
+            transform: scaleX(1);
+        }
+        
+        nav .close {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 6%;
+            right: 5%;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        nav h2{
+            position: absolute;
+            top:5%;
+            left: 5%;
+            opacity: 0;
+            pointer-events: none;
+            color: #fff;
+            font-size: 2em;
+        }
+        
+        nav .close div::before,
+        nav .close div::after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background: #fff;
+            transition: background .5s ease;
+        }
+        nav .close div::before{
+            transform: rotate(-45deg);
+        }
+        
+        nav .close div::after{
+            transform: rotate(45deg);
+        }
+        
+        nav .close:hover div::before,
+        nav .close:hover div::after{
+            background: rgb(209, 3, 3);
+        }
+        
+        @media (max-width: 992px){
+          h1{
+            font-size: 25px;
+          }
+        }
+        .orders-container {
+          display: block;
+          margin-bottom: 20px;
+          width: 90%;
+          overflow: auto;
+          margin-top: 100px;
+        }
+        .orders-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+        
+        .orders-table th,
+        .orders-table td {
+          padding: 10px;
+          text-align: left;
+          border: 1px solid #ddd;
+        }
+        
+        .orders-table th {
+          background-color: #f2f2f2;
+          font-weight: bold;
+        }
+        
+        .orders-table td:first-child {
+          width: 160px;
+          heigh:160px;
+        }
+        
+        .orders-table td:nth-child(4) {
+          width: auto;
+        }
+        
+        
+        
+        .order-img {
+          height: 150px;
+          width :150px;
+          margin-right: 10px;
+        }
+        header {
+          display: flex;
+          align-items: center;
+          margin: 0.5rem 0 0 2rem;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width:100%;
+          height:90px;
+          
+        }
+        
+        
+            h1 {
+          font-size: 3rem;
+          margin: 0;
+          color: #0D8A0D;
+          text-shadow: 2px 2px #8DC98D;
+        }
+        header img {
+          width: 4rem;
+          height: 4rem;
+          margin-right: 1rem;
+        }
+        .cancel {
+          background-color: red;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        
+        .cancel:hover {
+          background-color: orange;
+        }
+        
+        
+    </style>
+    
+    
+    <body>
+       
+      <form method="POST">
+       
+        <div class="orders-container">
+         
+          <table class="orders-table">
+      
+          <thead>
+            <tr>
+              <th>Product Category </th>
+              <th>Best Condition Products   </th>
+              <th>Good Condition Products   </th>
+              <th>Poor Condition Products   </th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in y %}
+              <tr>
+            
+                <td>Headphones</td>
+                <td>Count : {{ order.best_headphone_stocks }} <br> Worth : {{order.best_headphone_worth}} Rs</td>
+                <td>Count : {{ order.good_headphone_stocks }} <br> Worth : {{order.good_headphone_worth}} Rs</td>
+                <td>Count : {{ order.poor_headphone_stocks }} <br> Worth : {{order.poor_headphone_worth}} Rs</td>
+                
+               
+               
+              </tr>
+            {% endfor %}
+         
+            {% for order in y %}
+              <tr>
+                <td>Phones</td>
+                <td>Count : {{ order.best_phone_stocks }} <br> Worth : {{order.best_phone_worth}} Rs</td>
+                <td>Count : {{ order.good_phone_stocks }} <br> Worth : {{order.good_phone_worth}} Rs</td>
+                <td>Count : {{ order.poor_phone_stocks }} <br> Worth : {{order.poor_phone_worth}} Rs</td>
+              </tr>
+            {% endfor %}
+          
+            {% for order in y %}
+              <tr>
+                <td>Laptop</td>
+                <td>Count : {{ order.best_laptop_stocks }} <br> Worth : {{order.best_laptop_worth}} Rs</td>
+                <td>Count : {{ order.good_laptop_stocks }} <br> Worth : {{order.good_laptop_worth}} Rs</td>
+                <td>Count : {{ order.poor_laptop_stocks }} <br> Worth : {{order.poor_laptop_worth}} Rs</td>
+              </tr>
+            {% endfor %}
+      
+            {% for order in y %}
+              <tr>
+                <td>Smartwatches</td>
+                <td>Count : {{ order.best_watch_stocks }} <br> Worth : {{order.best_watch_worth}} Rs</td>
+                <td>Count : {{ order.good_watch_stocks }} <br> Worth : {{order.good_watch_worth}} Rs</td>
+                <td>Count : {{ order.poor_watch_stocks }} <br> Worth : {{order.poor_watch_worth}} Rs</td>
+              </tr>
+            {% endfor %}
+      
+            {% for order in y%}
+              <tr>
+                <td>TV </td>
+                <td>Count : {{ order.best_tv_stocks }} <br> Worth : {{order.best_tv_worth}} Rs</td>
+                <td>Count : {{ order.good_tv_stocks }} <br> Worth : {{order.good_tv_worth}} Rs</td>
+                <td>Count : {{ order.poor_tv_stocks }} <br> Worth : {{order.poor_tv_worth}} Rs</td>
+              </tr>
+            {% endfor %}
+         
+            {% for order in y %}
+              <tr>
+                <td>Speakers</td>
+                <td>Count : {{ order.best_speaker_stocks }} <br> Worth : {{order.best_speaker_worth}} Rs</td>
+                <td>Count : {{ order.good_speaker_stocks }} <br> Worth : {{order.good_speaker_worth}} Rs</td>
+                <td>Count : {{ order.poor_speaker_stocks }} <br> Worth : {{order.poor_speaker_worth}} Rs</td>
+              </tr>
+            {% endfor %}
+         
+            {% for order in y %}
+              <tr>
+                <td>Mouse</td>
+                <td>Count : {{ order.best_mouse_stocks }} <br> Worth : {{order.best_mouse_worth}} Rs</td>
+                <td>Count : {{ order.good_mouse_stocks }} <br> Worth : {{order.good_mouse_worth}} Rs</td>
+                <td>Count : {{ order.poor_mouse_stocks }} <br> Worth : {{order.poor_mouse_worth}} Rs</td>
+              </tr>
+            {% endfor %}
+          
+            {% for order in y  %}
+              <tr>
+                <td>Keyboard</td>
+                <td>Count : {{ order.best_keyboard_stocks }} <br> Worth : {{order.best_keyboard_worth}} Rs</td>
+                <td>Count : {{ order.good_keyboard_stocks }} <br> Worth : {{order.good_keyboard_worth}} Rs</td>
+                <td>Count : {{ order.poor_keyboard_stocks }} <br> Worth : {{order.poor_keyboard_worth}} Rs</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </form>
+    </body>
+    
+      <script>
+
+        function cancelOrder(orderId,product) {
+        
+       
+       
+          document.getElementById("order").value = orderId;
+          document.getElementById("product").value = product;
+        
+          document.forms[0].submit();
+        }
+
+
+
+    const open = document.querySelector('.container');
+		const close = document.querySelector('.close');
+		var tl = gsap.timeline({ defaults: { duration: 1, ease: 'expo.inOut' } });
+		open.addEventListener('click', () => {
+			if (tl.reversed()) {
+				tl.play();
+			} else {
+                
+                document.getElementById("welcome").innerHTML="Hello Shree !";
+				tl.to('nav', { right: 0 })
+					.to('nav', { height: '100vh' }, '-=.1')
+					.to('nav ul li a', { opacity: 1, pointerEvents: 'all', stagger: .2 }, '-=.8')
+					.to('.close', { opacity: 1, pointerEvents: 'all' }, "-=.8")
+					.to('nav h2', { opacity: 1 }, '-=1');
+			}
+		});
+
+		close.addEventListener('click', () => {
+			tl.reverse();
+		});
+      </script>
+        
+  
+</html>

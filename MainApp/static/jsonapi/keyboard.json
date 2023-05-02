@@ -3,42 +3,63 @@
       "company": "Zebronics",
       "Models": [
         {
-          "Zebronics Model 1": 300
+          "Zebronics Zeb-Transformer Gaming Keyboard": 1999
         },
-        {
-          "Zebronics Model 2": 500
+          {
+          "Zebronics Zeb-Max Pro Mechanical Gaming Keyboard": 4499
         },
-        {
-          "Zebronics Model 3": 400
+          {
+          "Zebronics Zeb-Blaze Mechanical Keyboard": 3699
+        },
+          {
+          "Zebronics Zeb-Overstep RGB Mechanical Keyboard": 2899
+        },
+          {
+          "Zebronics Zeb-Galactic Wired USB Keyboard": 399
         }
+        
       ]
     },
     {
       "company": "Dell",
       "Models": [
         {
-          "Dell Model 1": 250
+          "Dell KB216 Wired Multimedia USB Keyboard": 799
         },
-        {
-          "Dell Model 2": 350
+          {
+          "Dell KM117 Wireless Keyboard and Mouse Combo": 1699
         },
-        {
-          "Dell Model 3": 450
+          {
+          "Dell KB522 Business Multimedia USB Keyboard": 1399
+        },
+          {
+          "Dell Alienware Pro Gaming Mechanical Keyboard AW768": 12999
+        },
+          {
+          "Dell KB216 Premier Wireless Keyboard and Mouse Combo": 2999
         }
+        
       ]
     },
     {
       "company": "HP",
       "Models": [
         {
-          "HP Model 1": 200
-        },
-        {
-          "HP Model 2": 300
-        },
-        {
-          "HP Model 3": 400
+          "HP K1500": 499
+          },
+          {
+          "HP K300": 799
+          },
+          {
+          "HP K500F": 1499
+          },
+          {
+          "HP Pavilion Gaming Keyboard 800": 4499
+          },
+          {
+          "HP OMEN Sequencer Keyboard": 16999
         }
+        
       ]
     }
   ]

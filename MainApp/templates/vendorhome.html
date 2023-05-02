@@ -33,8 +33,8 @@
             <div></div>
         </div>
         <ul>
-            <li><a href="/sellerhome">Home</a></li>
-            <li><a href="/sellerorder/">My Order Status </a></li>
+            <li><a href="/vendorhome/">Home</a></li>
+            <li><a href="/vendororder/">Avialble Stocks  </a></li>
             <hr>
             <li><a href="/">Log Out </a></li>
             <hr>
@@ -314,6 +314,8 @@
           <input type="hidden" id="status_change" name="status_change"/> 
           <input type="hidden" id="order" name="order"/>
           <input type="hidden" id="product" name="product"/>
+          <input type="hidden" id="condition" name="condition"/>
+          <input type="hidden" id="price" name="price"/>
         <div class="orders-container">
          
           <table class="orders-table">
@@ -354,7 +356,7 @@
                   {% if order.status == "Accepted" %}
                      
                       <button class="disabled" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','headphone')">Complete Order </button>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','headphone','{{ order.overall_condition }}','{{ order.price }}')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
                     
                       <button class="disabled" disabled>Order Accepted </button><br><br>
@@ -388,7 +390,7 @@
                   {% if order.status == "Accepted" %}
                      
                       <button class="disabled" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="CompleteOrder('{{ order.id }}', 'phone')">Complete Order </button>
+                      <button class="completed" onclick="CompleteOrder('{{ order.id }}', 'phone','{{ order.overall_condition }}','{{ order.price }}')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
                     
                       <button class="disabled" disabled>Order Accepted </button><br><br>
@@ -421,7 +423,7 @@
                   {% if order.status == "Accepted" %}
                      
                       <button class="disabled" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','laptop')">Complete Order </button>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','laptop','{{ order.overall_condition }}','{{ order.price }}')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
                     
                       <button class="disabled" disabled>Order Accepted </button><br><br>
@@ -454,7 +456,7 @@
                   {% if order.status == "Accepted" %}
                      
                       <button class="disabled" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','watch')">Complete Order </button>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','watch','{{ order.overall_condition }}','{{ order.price }}')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
                     
                       <button class="disabled" disabled>Order Accepted </button><br><br>
@@ -486,7 +488,7 @@
                   {% if order.status == "Accepted" %}
                      
                       <button class="disabled" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','tv')">Complete Order </button>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','tv','{{ order.overall_condition }}','{{ order.price }}')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
                     
                       <button class="disabled" disabled>Order Accepted </button><br><br>
@@ -519,7 +521,7 @@
                   {% if order.status == "Accepted" %}
                      
                       <button class="disabled" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','speaker')">Complete Order </button>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','speaker','{{ order.overall_condition }}','{{ order.price }}')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
                     
                       <button class="disabled" disabled>Order Accepted </button><br><br>
@@ -551,7 +553,7 @@
                   {% if order.status == "Accepted" %}
                      
                       <button class="disabled" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','mouse')">Complete Order </button>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','mouse','{{ order.overall_condition }}','{{ order.price }}')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
                     
                       <button class="disabled" disabled>Order Accepted </button><br><br>
@@ -582,7 +584,7 @@
                   {% if order.status == "Accepted" %}
                      
                       <button class="disabled" disabled>Order Accepted </button><br><br>
-                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','keyboard')">Complete Order </button>
+                      <button class="completed" onclick="CompletetOrder('{{ order.id }}','keyboard','{{ order.overall_condition }}','{{ order.price }}')">Complete Order </button>
                   {% elif order.status == 'Completed' %}
                     
                       <button class="disabled" disabled>Order Accepted </button><br><br>
@@ -616,14 +618,15 @@
 
 
         
-        function CompletetOrder(orderId,product) {
+        function CompletetOrder(orderId,product,condition,price) {
         
        
           console.log("complete");
           document.getElementById("status_change").value = "C";
           document.getElementById("order").value = orderId;
           document.getElementById("product").value = product;
-          
+          document.getElementById("condition").value = condition;
+          document.getElementById("price").value = price;
           document.forms[0].submit();
         }
 

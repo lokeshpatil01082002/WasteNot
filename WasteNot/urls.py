@@ -41,6 +41,7 @@ urlpatterns = [
     path('sellmouse/',views.SellMousePage,name='sellmouse'),
     path('sellkeyboard/',views.SellKeyboardPage,name='sellkeyboard'),
     path('selllaptop/',views.SellLaptopPage,name='selllaptop'),
+    path('vendororder/',views.VendorOrderPage,name='vendororder'),
 ]
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,

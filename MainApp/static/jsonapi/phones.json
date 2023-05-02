@@ -3,140 +3,75 @@
       "company": "Realme",
       "Models": [
         {
-          "Realme1": 500
-        },
-        {
-          "Realme2": 800
-        },
-        {
-          "Realme3": 700
-        },
-        {
-          "Realme4": 1000
-        },
-        {
-          "Realme5": 1500
-        },
-        {
-          "Realme6": 2000
-        },
-        {
-          "Realme7": 2500
-        },
-        {
-          "Realme8": 1800
-        },
-        {
-          "Realme9": 1200
-        },
-        {
-          "Realme10": 900
+          "Realme C11 (2021)": 7499
+          },
+          {
+          "Realme C21 (2021)": 8999
+          },
+          {
+          "Realme Narzo 30A (2021)": 9999
+          },
+          {
+          "Realme Narzo 50A (2021)": 11499
+          },
+          {
+          "Realme 8 Pro (2021)": 18999
         }
+        
       ]
     },
     {
       "company": "Xiaomi",
       "Models": [
         {
-          "Xiaomi1": 600
-        },
-        {
-          "Xiaomi2": 900
-        },
-        {
-          "Xiaomi3": 800
-        },
-        {
-          "Xiaomi4": 1200
-        },
-        {
-          "Xiaomi5": 1500
-        },
-        {
-          "Xiaomi6": 2500
-        },
-        {
-          "Xiaomi7": 2000
-        },
-        {
-          "Xiaomi8": 1600
-        },
-        {
-          "Xiaomi9": 1100
-        },
-        {
-          "Xiaomi10": 800
+          "Xiaomi Mi 11X Pro": 39999
+          },
+          {
+          "Xiaomi Mi 11 Lite": 21999
+          },
+          {
+          "Xiaomi Mi 11X": 29999
+          },
+          {
+          "Xiaomi Mi 11 Ultra": 69999
+          },
+          {
+          "Xiaomi Mi 11 Lite 5G": 23999
         }
+        
       ]
     },
     {
       "company": "Oppo",
       "Models": [
         {
-          "Oppo1": 800
-        },
-        {
-          "Oppo2": 1100
-        },
-        {
-          "Oppo3": 900
-        },
-        {
-          "Oppo4": 1400
-        },
-        {
-          "Oppo5": 1800
-        },
-        {
-          "Oppo6": 3000
-        },
-        {
-          "Oppo7": 2500
-        },
-        {
-          "Oppo8": 2000
-        },
-        {
-          "Oppo9": 1300
-        },
-        {
-          "Oppo10": 1000
+          "Oppo A15 (2020)": 9490
+          },
+          {
+          "Oppo A53s 5G (2021)": 15990
+          },
+          {
+          "Oppo F17 Pro (2020)": 22990
+          },
+          {
+          "Oppo Reno6 5G (2021)": 29990
+          },
+          {
+          "Oppo Find X3 Pro (2021)": 129990
         }
+        
       ]
     },
     {
       "company": "Samsung",
       "Models": [
         {
-          "Samsung1": 1000
-        },
-        {
-          "Samsung2": 1500
-        },
-        {
-          "Samsung3": 1200
-        },
-        {
-          "Samsung4": 1800
-        },
-        {
-          "Samsung5": 2200
-        },
-        {
-          "Samsung6": 3500
-        },
-        {
-          "Samsung7": 2800
-        },
-        {
-          "Samsung8": 2000
-        },
-        {
-          "Samsung9": 1400
-        },
-        {
-          "Samsung10": 1100
-        }
+          "Samsung Galaxy S21 Ultra 5G": 105999},{
+          "Samsung Galaxy A52s 5G": 35999},{
+          "Samsung Galaxy M32 5G": 14999},{
+          "Samsung Galaxy F62": 23999},{
+          "Samsung Galaxy M42 5G": 21999}
+              
       ]
     },
     {
