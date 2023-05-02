@@ -294,6 +294,23 @@
 		.req:hover {
 			background-color: blue;
 		}
+    .condition-check{
+      background-color: #edede9;
+      padding-left: 2rem;
+      padding-block: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+      width: 100%;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    .condition-check ul li{
+      list-style: none;
+    }
+   .note{
+    color: #ae2012;
+    font: small;
+   }
     </style>
     
     
@@ -302,6 +319,15 @@
       <form method="POST">
        
         <div class="orders-container">
+          <div class="input-group condition-check">
+            <p class="note"> Note* </p>
+             <ul>
+             <li>Best: No physical damage</li>
+             <li>Good: Damages can be repaired but performance is degrated or used for long period of time</li>
+             <li>Worst: Significant physical damage, such as a cracked or broken screen, dents or scratches on the body.</li>
+             </ul>
+           </div>
+        <br><br>
          <h3>Headphones</h3>
           <table class="orders-table">
           <thead>

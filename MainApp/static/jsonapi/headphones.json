@@ -3,160 +3,134 @@
     "company": "Boat",
     "Models": [
       {
-        "BoatModel1": 500
+        "Boat Rockerz 255F Bluetooth earphones":1299
       },
-      {
-        "BoatModel2": 1000
-      },
-      {
-        "BoatModel3": 750
-      },
-      {
-        "BoatModel4": 1500
-      },
-      {
-        "BoatModel5": 2000
-      },
-      {
-        "BoatModel6": 3000
-      },
-      {
-        "BoatModel7": 2500
-      },
-      {
-        "BoatModel8": 1800
-      },
-      {
-        "BoatModel9": 1200
-      },
-      {
-        "BoatModel10": 900
+        {
+        "Boat Rockerz 255 Pro Plus Bluetooth earphones":1499       
+       },
+        {
+        "Boat Rockerz 255 Pro Bluetooth earphones":1199       
+       },
+        {
+        "Boat Rockerz 450 Bluetooth headphones":1499       
+       },
+        {
+        "Boat Rockerz 510 Bluetooth headphones":1499       
+       },
+        {
+        "Boat Rockerz 550 Over-ear Bluetooth headphones":1999       
+       },
+        {
+        "Boat Rockerz 600 On-ear Bluetooth headphones":1699       
+       },
+        {
+        "Boat BassHeads 100 earphones":349    
+       },
+        {
+        "Boat BassHeads 225 earphones":549    
+       },
+        {
+        "Boat Airdopes 131 true wireless earbuds":1299       
+       },
+        {
+        "Boat Airdopes 201 true wireless earbuds":1299       
+       },
+        {
+        "Boat Airdopes 311v2 true wireless earbuds":1799       
+       },
+        {
+        "Boat Airdopes 381 true wireless earbuds":1999       
+       },
+        {
+        "Boat Airdopes 441 true wireless earbuds":2999       
+       },
+        {
+        "Boat Airdopes 511v2 true wireless earbuds":2999        
       }
+
     ]
   },
   {
     "company": "JBL",
     "Models": [
       {
-        "JBLModel1": 800
-      },
-      {
-        "JBLModel2": 1200
-      },
-      {
-        "JBLModel3": 900
-      },
-      {
-        "JBLModel4": 1500
-      },
-      {
-        "JBLModel5": 2000
-      },
-      {
-        "JBLModel6": 3000
-      },
-      {
-        "JBLModel7": 2500
-      },
-      {
-        "JBLModel8": 1800
-      },
-      {
-        "JBLModel9": 1200
-      },
-      {
-        "JBLModel10": 900
+        "JBL T450BT": 2999
+        },
+        {
+        "JBL E45BT": 5999
+        },
+        {
+        "JBL E55BT": 8999
+        },
+        {
+        "JBL Live 500BT": 9999
+        },
+        {
+        "JBL Live 650BTNC": 14999
+        },
+        {
+        "JBL Quantum 800": 18999
+        },
+        {
+        "JBL Club 700BT": 16999
+        },
+        {
+        "JBL Club 950NC": 24999
       }
+      
     ]
   },
   {
     "company": "Sony",
     "Models": [
       {
-        "SonyModel1": 1000
+        "Sony WH-CH510": 4990
       },
-      {
-        "SonyModel2": 1500
+        {
+        "Sony WH-CH710N": 12990
       },
-      {
-        "SonyModel3": 1200
+        {
+        "Sony WH-XB700": 9990
       },
-      {
-        "SonyModel4": 1800
+        {
+        "Sony WH-1000XM4": 29990
       },
-      {
-        "SonyModel5": 2200
+        {
+        "Sony WH-1000XM3": 24990
       },
-      {
-        "SonyModel6": 3500
+        {
+        "Sony WF-SP800N": 18990
       },
-      {
-        "SonyModel7": 2800
+        {
+        "Sony WF-1000XM4": 24990
       },
-      {
-        "SonyModel8": 2000
-      },
-      {
-        "SonyModel9": 1400
-      },
-      {
-        "SonyModel10": 1100
+        {
+        "Sony WF-1000XM3": 19990
       }
+      
+      
     ]
   },
   {
     "company": "Realme",
     "Models": [
       {
-        "RealmeModel1": 700
-      },
-      {
-        "RealmeModel2": 1000
-      },
-      {
-        "RealmeModel3": 800
-      },
-      {
-        "RealmeModel4": 1200
-      },
-      {
-        "RealmeModel5": 1600
-      },
-      {
-        "RealmeModel6": 2500
-      },
-      {
-        "RealmeModel7": 2000
-      },
-      {
-        "RealmeModel8": 1500
-      },
-      {
-        "RealmeModel9": 1000
-      },
-      {
-        "RealmeModel10": 750
+        "Realme Buds Air 2": 3299
+        },
+        {
+        "Realme Buds Q2": 2399
+        },
+        {
+        "Realme Buds Air Pro": 5299
+        },
+        {
+        "Realme Buds Wireless 2": 2399
+        },
+        {
+        "Realme Buds Wireless Pro": 4599
       }
-    ]
-  },
-  {
-    "company": "Boult",
-    "Models": [
-      {
-        "BoultModel1": 600
-      },
-      {
-        "BoultModel2": 900
-      },
-      {
-        "BoultModel3": 700
-      },
-      {
-        "BoultModel4": 1000
-      },
-      {
-        "BoultModel5": 1300
-      }
+      
     ]
   }
+
 ]

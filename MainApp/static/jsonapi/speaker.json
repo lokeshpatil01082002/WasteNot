@@ -3,159 +3,61 @@
       "company": "Boat",
       "Models": [
         {
-          "BoatModel1": 500
-        },
-        {
-          "BoatModel2": 1000
-        },
-        {
-          "BoatModel3": 750
-        },
-        {
-          "BoatModel4": 1500
-        },
-        {
-          "BoatModel5": 2000
-        },
-        {
-          "BoatModel6": 3000
-        },
-        {
-          "BoatModel7": 2500
-        },
-        {
-          "BoatModel8": 1800
-        },
-        {
-          "BoatModel9": 1200
-        },
-        {
-          "BoatModel10": 900
+          "Boat Stone 1200": 5999
+          },
+          {
+          "Boat Stone 1400": 7999
+          },
+          {
+          "Boat Stone 1000": 3499
+          },
+          {
+          "Boat Stone 650": 2499
+          },
+          {
+          "Boat Stone 200": 1499
         }
+        
       ]
     },
     {
       "company": "JBL",
       "Models": [
         {
-          "JBLModel1": 800
-        },
-        {
-          "JBLModel2": 1200
-        },
-        {
-          "JBLModel3": 900
-        },
-        {
-          "JBLModel4": 1500
-        },
-        {
-          "JBLModel5": 2000
-        },
-        {
-          "JBLModel6": 3000
-        },
-        {
-          "JBLModel7": 2500
-        },
-        {
-          "JBLModel8": 1800
-        },
-        {
-          "JBLModel9": 1200
-        },
-        {
-          "JBLModel10": 900
+          "JBL Go 3": 3499
+          },
+          {
+          "JBL Flip Essential": 6499
+          },
+          {
+          "JBL Clip 4": 3499
+          },
+          {
+          "JBL Charge 5": 17999
+          },
+          {
+          "JBL Xtreme 3": 25999
         }
+        
       ]
     },
     {
       "company": "Sony",
       "Models": [
         {
-          "SonyModel1": 1000
-        },
-        {
-          "SonyModel2": 1500
-        },
-        {
-          "SonyModel3": 1200
-        },
-        {
-          "SonyModel4": 1800
-        },
-        {
-          "SonyModel5": 2200
-        },
-        {
-          "SonyModel6": 3500
-        },
-        {
-          "SonyModel7": 2800
-        },
-        {
-          "SonyModel8": 2000
-        },
-        {
-          "SonyModel9": 1400
-        },
-        {
-          "SonyModel10": 1100
-        }
-      ]
-    },
-    {
-      "company": "Realme",
-      "Models": [
-        {
-          "RealmeModel1": 700
-        },
-        {
-          "RealmeModel2": 1000
-        },
-        {
-          "RealmeModel3": 800
-        },
-        {
-          "RealmeModel4": 1200
-        },
-        {
-          "RealmeModel5": 1600
-        },
-        {
-          "RealmeModel6": 2500
-        },
-        {
-          "RealmeModel7": 2000
-        },
-        {
-          "RealmeModel8": 1500
-        },
-        {
-          "RealmeModel9": 1000
-        },
-        {
-          "RealmeModel10": 750
-        }
-      ]
-    },
-    {
-      "company": "Boult",
-      "Models": [
-        {
-          "BoultModel1": 600
-        },
-        {
-          "BoultModel2": 900
-        },
-        {
-          "BoultModel3": 700
-        },
-        {
-          "BoultModel4": 1000
-        },
-        {
-          "BoultModel5": 1300
+          "Sony SRS-XB13": 4990
+          },
+          {
+          "Sony SRS-XB23": 8990
+          },
+          {
+          "Sony SRS-XB33": 14990
+          },
+          {
+          "Sony SRS-XB43": 18990
+          },
+          {
+          "Sony SRS-XB12": 3590
         }
       ]
     }
